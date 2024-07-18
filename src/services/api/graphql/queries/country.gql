@@ -1,0 +1,21 @@
+#import "../fragment/fragments.gql"
+
+query GetCountry($code: ID!) {
+  country(code: $code) {
+    ...CountryFragment
+    native
+    capital
+    emoji
+    languages {
+      code
+      name
+    }
+  }
+}
+
+query GetCountries {
+  countries {
+    phone
+    ...CountryFragment
+  }
+}
