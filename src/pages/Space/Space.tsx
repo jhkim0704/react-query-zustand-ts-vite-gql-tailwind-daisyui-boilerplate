@@ -1,6 +1,6 @@
 // Space.tsx
 import { useState } from 'react';
-import { useInsertUsers } from '@/services/queries/space.query';
+import { useInsertUsers, useUser } from '@/services/queries/space.query';
 import { User } from '@/types/space';
 import Button from '@/components/Button';
 
@@ -8,7 +8,10 @@ const Space = () => {
   const [name, setName] = useState('');
   const [rocket, setRocket] = useState('');
   const mutation = useInsertUsers();
+  const [searchTerm, setSearchTerm] = useState<string>('');
+  const { isLoading, data } = useUser();
 
+  if(!data) return null
   const handleSubmit = () => {
     const newUser: User = {
       id: 'c78b04fb-b61b-4232-b194-c58c092d46fa', // 유니크 아이디 생성 방법은 다양합니다.

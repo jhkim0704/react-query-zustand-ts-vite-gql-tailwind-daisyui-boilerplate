@@ -1,6 +1,6 @@
 // spcae.service.ts
 import { spaceClient } from '@/lib/graphql-client';
-import { GetShipsGqlType, GetShipsResponse, InsertUsersGqlType, InsertUsersResponse, InsertUsersVariables } from '@/types/space';
+import { GetShipsGqlType, GetShipsResponse, GetUserGqlType, GetUserResponse, InsertUsersGqlType, InsertUsersResponse, InsertUsersVariables } from '@/types/space';
 import Insert_users from '@/services/api/graphql/mutaions/insert_users.gql';
 import { _queries } from '@/services/api/graphql/queries/space.gql';
 
@@ -22,4 +22,11 @@ export const getShips:GetShipsGqlType = async () => {
     query: _queries.GetShips,
   });
   return data.ships
+};
+
+export const getUser:GetUserGqlType = async () => {
+  const { data } = await spaceClient.query<GetUserResponse>({
+    query: _queries.GetUser,
+  });
+  return data.user
 };

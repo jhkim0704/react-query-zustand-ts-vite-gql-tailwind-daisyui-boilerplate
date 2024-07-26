@@ -5,3 +5,11 @@ query GetShips {
     name
   }
 }
+
+query GetUser {
+  user {
+    id
+    name
+    email
+  }
+}

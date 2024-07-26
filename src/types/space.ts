@@ -28,3 +28,16 @@ export interface GetShipsGqlType {
 export interface GetShipsResponse {
   ships: Ship[]
 }
+export interface User {
+  id: string
+  name: string
+  email: string
+}
+
+export interface GetUserGqlType {
+  (): Promise<User>
+}
+
+export interface GetUserResponse {
+  user: User
+}
