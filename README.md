@@ -41,21 +41,23 @@
    npm start
    ```
 
-### 프로젝트 구조
+## 프로젝트 구조
 
-├── public # 퍼블릭 자산
-├── src # 소스 파일
-│ ├── components # 리액트 컴포넌트
-│ ├── hooks # 커스텀 훅
-│ ├── pages # 페이지 컴포넌트
-│ ├── store # Zustand 스토어
-│ ├── styles # CSS 및 스타일
-│ ├── utils # 유틸리티 함수
-│ ├── App.tsx # 메인 앱 컴포넌트
-│ └── index.tsx # 엔트리 포인트
-├── .eslintrc.js # ESLint 설정
-├── .prettierrc # Prettier 설정
-├── tailwind.config.js # Tailwind CSS 설정
-├── tsconfig.json # TypeScript 설정
-├── vite.config.ts # Vite 설정
-└── package.json # 프로젝트 의존성 및 스크립트
+```plaintext
+├── public                # 퍼블릭
+├── src                   # 소스 파일
+│   ├── components        # 리액트 컴포넌트
+│   ├── hooks             # 커스텀 훅
+│   ├── pages             # 페이지 컴포넌트
+│   ├── store             # Zustand 스토어
+│   ├── styles            # CSS 및 스타일
+│   ├── utils             # 유틸리티 함수
+│   ├── App.tsx           # 메인 앱 컴포넌트
+│   └── index.tsx         # 엔트리 포인트
+├── .eslintrc.js          # ESLint 설정
+├── .prettierrc           # Prettier 설정
+├── tailwind.config.js    # Tailwind CSS 설정
+├── tsconfig.json         # TypeScript 설정
+├── vite.config.ts        # Vite 설정
+└── package.json          # 프로젝트 의존성 및 스크립트
+```
