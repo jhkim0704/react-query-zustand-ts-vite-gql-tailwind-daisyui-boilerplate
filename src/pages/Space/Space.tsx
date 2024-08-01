@@ -12,7 +12,7 @@ const Space = () => {
   const { isLoading, data } = useUser('9991');
   const { isLoading: isUserLoading, data: users } = useUsers();
 
-  if(!data && !users) return null
+  if (!data && !users) return null;
   const handleSubmit = () => {
     const newUser: User = {
       id: 'c78b04fb-b61b-4232-b194-c58c092d46fa', // 유니크 아이디 생성 방법은 다양합니다.
@@ -32,23 +32,31 @@ const Space = () => {
             handleSubmit();
           }}
         >
-          <div className='mt-4'>
-          Name:
-            <input type="text" placeholder="input here" className="input input-bordered w-full max-w-xs" 
+          <div className="mt-4">
+            Name:
+            <input
+              type="text"
+              placeholder="input here"
+              className="input input-bordered w-full max-w-xs"
               onChange={(e) => {
                 setName(e.target.value);
-            }}
+              }}
             />
           </div>
-          <div className='mt-4'>
+          <div className="mt-4">
             Rocket:
-            <input type="text" placeholder="input here" className="input input-bordered w-full max-w-xs" 
+            <input
+              type="text"
+              placeholder="input here"
+              className="input input-bordered w-full max-w-xs"
               onChange={(e) => {
                 setRocket(e.target.value);
-            }}
+              }}
             />
           </div>
-          <div className='mt-4'><Button text="등록" type='submit' /></div>
+          <div className="mt-4">
+            <Button text="등록" type="submit" />
+          </div>
         </form>
         {mutation.isLoading && <p>Loading...</p>}
         {mutation.isError && <p>Error: {mutation.error.message}</p>}

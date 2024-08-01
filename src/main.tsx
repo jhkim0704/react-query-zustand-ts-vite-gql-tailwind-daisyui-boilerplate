@@ -1,18 +1,17 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import App from './App';
-import { worker } from './mocks/browser'
+import { worker } from './mocks/browser';
 import './styles.css';
 
 async function prepare() {
   if (process.env.NODE_ENV === 'development') {
     return worker.start({
-      onUnhandledRequest: 'bypass'
-    })
+      onUnhandledRequest: 'bypass',
+    });
   }
-  return Promise.resolve()
+  return Promise.resolve();
 }
-
 
 const container = document.getElementById('root') as HTMLElement;
 const root = createRoot(container);
@@ -23,4 +22,4 @@ prepare().then(() => {
       <App />
     </React.StrictMode>
   );
-})
+});

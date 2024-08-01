@@ -1,7 +1,6 @@
 import Spinner from '@/components/Spinner';
 
-export interface ButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   text: string;
   isLoading?: boolean;
   className?: string;
@@ -26,13 +25,7 @@ const defaultClasses = `
     min-w-[100px]
   `;
 
-const Button: React.FC<ButtonProps> = ({
-  text,
-  isLoading,
-  className,
-  children,
-  ...props
-}) => (
+const Button: React.FC<ButtonProps> = ({ text, isLoading, className, children, ...props }) => (
   <button type="button" className={className ?? defaultClasses} {...props}>
     {isLoading ? <Spinner /> : children ?? text}
   </button>

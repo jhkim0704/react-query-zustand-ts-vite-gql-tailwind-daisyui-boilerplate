@@ -16,11 +16,11 @@ const SideMenu: React.FC<DrawerProps> = ({ isDrawerOpen, setIsDrawerOpen }) => {
   };
 
   const menuItems = [
-    { to: "/movies", text: "Movie List" },
-    { to: "/users", text: "User Insert" },
-    { to: "/ships", text: "Ship List" },
-    { to: "/country", text: "Country" },
-    { to: "/countries", text: "Country List" },
+    { to: '/movies', text: 'Movie List' },
+    { to: '/users', text: 'User Insert' },
+    { to: '/ships', text: 'Ship List' },
+    { to: '/country', text: 'Country' },
+    { to: '/countries', text: 'Country List' },
   ];
 
   const renderMenuItems = () => (
@@ -65,7 +65,11 @@ const SideMenu: React.FC<DrawerProps> = ({ isDrawerOpen, setIsDrawerOpen }) => {
       {/* 모바일 */}
       <div className="md:hidden">
         <div className={`fixed inset-0 bg-black bg-opacity-50 z-40 ${isDrawerOpen ? 'block' : 'hidden'}`} onClick={() => setIsDrawerOpen(false)}></div>
-        <div className={`fixed inset-y-0 left-0 w-64 bg-white shadow-lg z-50 transform transition-transform duration-300 ease-in-out ${isDrawerOpen ? 'translate-x-0' : '-translate-x-full'}`}>
+        <div
+          className={`fixed inset-y-0 left-0 w-64 bg-white shadow-lg z-50 transform transition-transform duration-300 ease-in-out ${
+            isDrawerOpen ? 'translate-x-0' : '-translate-x-full'
+          }`}
+        >
           <div className="p-4">
             <ul className="space-y-2">{renderMenuItems()}</ul>
           </div>

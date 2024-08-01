@@ -19,18 +19,11 @@ const MovieList: React.FC<MovieListProps> = ({ movies }) => {
   return (
     <>
       {movies.map((movie) => (
-        <div
-          key={movie.url}
-          className="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3"
-        >
+        <div key={movie.url} className="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3">
           <article className="overflow-hidden rounded-lg shadow-lg">
             <a href={movie.url} target="_blank" rel="noreferrer">
               {movie.large_cover_image ? (
-                <img
-                  alt="Placeholder"
-                  className="block h-auto w-full"
-                  src={movie.large_cover_image}
-                />
+                <img alt="Placeholder" className="block h-auto w-full" src={movie.large_cover_image} />
               ) : (
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -51,12 +44,7 @@ const MovieList: React.FC<MovieListProps> = ({ movies }) => {
 
             <header className="flex items-center justify-between leading-tight p-2 md:p-4">
               <h1 className="text-lg">
-                <a
-                  className="no-underline hover:underline text-black"
-                  href={movie.url}
-                  target="_blank"
-                  rel="noreferrer"
-                >
+                <a className="no-underline hover:underline text-black" href={movie.url} target="_blank" rel="noreferrer">
                   {movie.title}
                 </a>
               </h1>
@@ -64,10 +52,7 @@ const MovieList: React.FC<MovieListProps> = ({ movies }) => {
             </header>
 
             <footer className="flex items-center justify-between leading-none p-2 md:p-4">
-              <a
-                className="flex items-center no-underline hover:underline text-black"
-                href="#"
-              >
+              <a className="flex items-center no-underline hover:underline text-black" href="#">
                 <span className="btn">
                   평점<i className="fa fa-heart"></i>
                   <div className="badge badge-secondary">{movie.rating}</div>
@@ -113,13 +98,7 @@ const Movies = () => {
           </div>
         </div>
       </div>
-      <div className="flex flex-wrap -mx-1 lg:-mx-4">
-        {isLoading ? (
-          <div>Loading...</div>
-        ) : (
-          <MovieList movies={data?.data?.movies ?? []} />
-        )}
-      </div>
+      <div className="flex flex-wrap -mx-1 lg:-mx-4">{isLoading ? <div>Loading...</div> : <MovieList movies={data?.data?.movies ?? []} />}</div>
     </div>
   );
 };

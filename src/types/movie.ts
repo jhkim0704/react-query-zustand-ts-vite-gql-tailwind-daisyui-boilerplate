@@ -13,8 +13,8 @@ export interface Movie {
 
 export interface GetMovieResponse {
   data: {
-    movies: Movie[]
-  }
+    movies: Movie[];
+  };
 }
 
 export interface GetMoviesProps {
@@ -23,5 +23,5 @@ export interface GetMoviesProps {
 }
 
 export interface GetMoviesParameterType {
-  (params: GetMoviesProps): Promise<GetMovieResponse>
+  (params: GetMoviesProps): Promise<GetMovieResponse>;
 }

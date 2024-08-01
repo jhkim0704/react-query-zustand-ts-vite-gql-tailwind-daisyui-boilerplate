@@ -30,28 +30,11 @@ const Login = () => {
   };
 
   return (
-    <form
-      className="m-auto w-[90%] md:w-[30%]"
-      onSubmit={handleSubmit(onSubmit)}
-    >
+    <form className="m-auto w-[90%] md:w-[30%]" onSubmit={handleSubmit(onSubmit)}>
       <p className="text-center text-sm mb-2">Username: user</p>
       <p className="text-center text-sm mb-3">Password: user</p>
-      <Input
-        errors={errors}
-        placeholder="Username"
-        label="Username"
-        id="username"
-        register={register}
-        name="username"
-      />
-      <Input
-        errors={errors}
-        placeholder="Password"
-        label="Password"
-        type="password"
-        register={register}
-        name="password"
-      />
+      <Input errors={errors} placeholder="Username" label="Username" id="username" register={register} name="username" />
+      <Input errors={errors} placeholder="Password" label="Password" type="password" register={register} name="password" />
       <Button text="Login" type="submit" isLoading={isLoading} />
     </form>
   );

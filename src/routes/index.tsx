@@ -22,13 +22,62 @@ const Router: React.FC = () => {
           <SideMenu isDrawerOpen={isDrawerOpen} setIsDrawerOpen={setIsDrawerOpen} />
           <div className="w-full overflow-auto px-4">
             <Routes>
-              <Route path="/" element={<PublicRoute><Home /></PublicRoute>} />
-              <Route path="/articles" element={<PrivateRoute><Articles /></PrivateRoute>} />
-              <Route path="/countries" element={<PrivateRoute><CountryList /></PrivateRoute>} />
-              <Route path="/country" element={<PrivateRoute><Country /></PrivateRoute>} />
-              <Route path="/movies" element={<PrivateRoute><Movies /></PrivateRoute>} />
-              <Route path="/users" element={<PrivateRoute><Users /></PrivateRoute>} />
-              <Route path="/ships" element={<PrivateRoute><Ships /></PrivateRoute>} />
+              <Route
+                path="/"
+                element={
+                  <PublicRoute>
+                    <Home />
+                  </PublicRoute>
+                }
+              />
+              <Route
+                path="/articles"
+                element={
+                  <PrivateRoute>
+                    <Articles />
+                  </PrivateRoute>
+                }
+              />
+              <Route
+                path="/countries"
+                element={
+                  <PrivateRoute>
+                    <CountryList />
+                  </PrivateRoute>
+                }
+              />
+              <Route
+                path="/country"
+                element={
+                  <PrivateRoute>
+                    <Country />
+                  </PrivateRoute>
+                }
+              />
+              <Route
+                path="/movies"
+                element={
+                  <PrivateRoute>
+                    <Movies />
+                  </PrivateRoute>
+                }
+              />
+              <Route
+                path="/users"
+                element={
+                  <PrivateRoute>
+                    <Users />
+                  </PrivateRoute>
+                }
+              />
+              <Route
+                path="/ships"
+                element={
+                  <PrivateRoute>
+                    <Ships />
+                  </PrivateRoute>
+                }
+              />
             </Routes>
           </div>
         </div>

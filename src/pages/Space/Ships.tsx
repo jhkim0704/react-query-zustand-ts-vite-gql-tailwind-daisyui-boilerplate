@@ -17,18 +17,11 @@ const ShipList: React.FC<ShipListProps> = ({ ships }) => {
   return (
     <>
       {ships.map((ship) => (
-        <div
-          key={ship.id}
-          className="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3"
-        >
+        <div key={ship.id} className="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3">
           <article className="overflow-hidden rounded-lg shadow-lg">
             <a href={ship.image} target="_blank" rel="noreferrer">
               {ship.image ? (
-                <img
-                  alt="Placeholder"
-                  className="block h-auto w-full"
-                  src={ship.image}
-                />
+                <img alt="Placeholder" className="block h-auto w-full" src={ship.image} />
               ) : (
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -48,15 +41,10 @@ const ShipList: React.FC<ShipListProps> = ({ ships }) => {
             </a>
 
             <header className="flex items-center justify-between leading-tight p-2 md:p-4">
-              <h1 className="text-lg">
-
-                  {ship.name}
-              </h1>
+              <h1 className="text-lg">{ship.name}</h1>
             </header>
 
-            <footer className="flex items-center justify-between leading-none p-2 md:p-4">
-
-            </footer>
+            <footer className="flex items-center justify-between leading-none p-2 md:p-4"></footer>
           </article>
         </div>
       ))}
@@ -67,7 +55,7 @@ const ShipList: React.FC<ShipListProps> = ({ ships }) => {
 const Ships = () => {
   const [searchTerm, setSearchTerm] = useState<string>('');
   const { isLoading, data } = useShips();
-  
+
   return (
     <div className="container my-12 mx-auto px-4 md:px-12">
       <div className="flex justify-center w-full">
@@ -87,13 +75,7 @@ const Ships = () => {
           </div>
         </div>
       </div>
-      <div className="flex flex-wrap -mx-1 lg:-mx-4">
-        {isLoading ? (
-          <div>Loading...</div>
-        ) : (
-          <ShipList ships={data ?? []} />
-        )}
-      </div>
+      <div className="flex flex-wrap -mx-1 lg:-mx-4">{isLoading ? <div>Loading...</div> : <ShipList ships={data ?? []} />}</div>
     </div>
   );
 };

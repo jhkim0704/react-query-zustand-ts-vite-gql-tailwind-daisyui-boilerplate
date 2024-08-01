@@ -24,9 +24,9 @@ export interface GetCountriesResponse {
 }
 
 export interface GetCountryGqlType {
-  (code: string): Promise<CountryInfoProps>
+  (code: string): Promise<CountryInfoProps>;
 }
 
 export interface GetCountriesGqlType {
-  (): Promise<CountryInfoProps[]>
+  (): Promise<CountryInfoProps[]>;
 }

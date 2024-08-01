@@ -36,9 +36,7 @@ export type DerivedFunction<
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   BaseFunction extends (...args: any[]) => unknown,
   T extends unknown[] = unknown[]
-> = BaseFunction extends (...a: infer U) => infer R
-  ? (...a: [...U, ...T]) => R
-  : never;
+> = BaseFunction extends (...a: infer U) => infer R ? (...a: [...U, ...T]) => R : never;
 
 /**
  * Converts string or template literals to UPPER_SNAKE_CASE
@@ -51,10 +49,7 @@ export type DerivedFunction<
  * type NewType = UpperSnakecase<'hello:world' | 'test:arg', ':'>; // HELLO_WORLD | TEST_ARG
  *
  */
-export type UpperSnakecase<
-  S extends string,
-  D extends string = ''
-> = S extends `${infer FirstWord}${D}${infer Rest}`
+export type UpperSnakecase<S extends string, D extends string = ''> = S extends `${infer FirstWord}${D}${infer Rest}`
   ? D extends ''
     ? Uppercase<S>
     : `${Uppercase<FirstWord>}_${Uppercase<Rest>}`

@@ -5,7 +5,7 @@ const CountryList = () => {
 
   if (isLoading) return <p>Loading...</p>;
   if (isError) return <p>Error fetching data</p>;
-  if (!data) return null
+  if (!data) return null;
 
   return (
     <div className="flex items-center justify-center">

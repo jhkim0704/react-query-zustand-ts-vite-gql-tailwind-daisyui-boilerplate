@@ -2,7 +2,15 @@
 import { spaceClient } from '@/lib/graphql-client';
 import Insert_users from '@/services/api/graphql/mutaions/insert_users.gql';
 import { _queries } from '@/services/api/graphql/queries/user.gql';
-import { InsertUsersGqlType, InsertUsersVariables,  InsertUsersResponse, GetUserGqlType, GetUserResponse, GetUsersGqlType, GetUsersResponse} from '@/types/user';
+import {
+  InsertUsersGqlType,
+  InsertUsersVariables,
+  InsertUsersResponse,
+  GetUserGqlType,
+  GetUserResponse,
+  GetUsersGqlType,
+  GetUsersResponse,
+} from '@/types/user';
 
 export const insertUsers: InsertUsersGqlType = async (objects: InsertUsersVariables) => {
   const { data } = await spaceClient.mutate<InsertUsersResponse>({
@@ -11,24 +19,23 @@ export const insertUsers: InsertUsersGqlType = async (objects: InsertUsersVariab
   });
 
   if (!data || !data.insert_users) {
-    throw new Error("Failed to insert users");
+    throw new Error('Failed to insert users');
   }
 
   return data.insert_users;
 };
 
-export const getUser:GetUserGqlType = async (id: string) => {
+export const getUser: GetUserGqlType = async (id: string) => {
   const { data } = await spaceClient.query<GetUserResponse>({
     query: _queries.GetUser,
     variables: { id },
   });
-  return data.user
+  return data.user;
 };
 
-export const getUsers:GetUsersGqlType = async () => {
+export const getUsers: GetUsersGqlType = async () => {
   const { data } = await spaceClient.query<GetUsersResponse>({
-  query: _queries.GetUsers,
+    query: _queries.GetUsers,
   });
-  return data.users
+  return data.users;
 };
-
