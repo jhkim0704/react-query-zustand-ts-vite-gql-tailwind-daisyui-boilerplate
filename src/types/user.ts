@@ -14,8 +14,11 @@ export type InsertUsersVariables = User[];
 export interface InsertUsersGqlType {
   (objects: InsertUsersVariables): Promise<InsertUsersResponse>;
 }
+export interface GetUserQueryVariables {
+  id: string;
+}
 export interface GetUserGqlType {
-  (id: string): Promise<User>;
+  (id: GetUserQueryVariables): Promise<User>;
 }
 
 export interface GetUserResponse {

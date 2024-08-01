@@ -1,25 +1,7 @@
-// src/mocks/handlers.ts
+// src/mocks/user.ts
 import { http, HttpResponse, graphql } from 'msw';
 import { userData, usersData } from 'mocks/data/user';
-
-// 타입 정의
-type User = {
-  id: string;
-  name: string;
-  rocket: string;
-};
-
-type GetUserQuery = {
-  user: User;
-};
-
-type GetUsersQuery = {
-  users: User[];
-};
-
-export interface GetUserQueryVariables {
-  id: string;
-}
+import { GetUserQueryVariables, GetUserResponse, GetUsersResponse, User } from '@/types/user';
 
 export const userHandlers = [
   http.get('/api/users', () => {
@@ -31,7 +13,7 @@ export const userHandlers = [
     ]);
   }),
 
-  graphql.query<GetUserQuery, GetUserQueryVariables>('GetUser', ({ variables }) => {
+  graphql.query<GetUserResponse, GetUserQueryVariables>('GetUser', ({ variables }) => {
     if (variables.id === '999') {
       return HttpResponse.json(
         {
@@ -49,7 +31,7 @@ export const userHandlers = [
     });
   }),
 
-  graphql.query<GetUsersQuery, never>('GetUsers', () => {
+  graphql.query<GetUsersResponse, never>('GetUsers', () => {
     const users: User[] = usersData;
     return HttpResponse.json({
       data: {
