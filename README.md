@@ -44,20 +44,33 @@
 ## 프로젝트 구조
 
 ```plaintext
-├── public                # 퍼블릭
-├── src                   # 소스 파일
+├── src                   # 소스 파일 디렉토리
 │   ├── components        # 리액트 컴포넌트
 │   ├── hooks             # 커스텀 훅
+│   ├── lib               # 라이브러리
+│   ├── mocks             # 모킹 데이터
 │   ├── pages             # 페이지 컴포넌트
+│   ├── routes            # 라우트 설정
+│   ├── services          # 서비스 계층(API)
 │   ├── store             # Zustand 스토어
-│   ├── styles            # CSS 및 스타일
-│   ├── utils             # 유틸리티 함수
-│   ├── App.tsx           # 메인 앱 컴포넌트
-│   └── index.tsx         # 엔트리 포인트
+│   ├── types             # 타입 정의 파일
+│   ├── App.css           # 애플리케이션 스타일
+│   ├── index.css         # 전역 스타일
+│   ├── logo.svg          # 로고 이미지
+│   ├── main.tsx          # 엔트리 포인트
+│   ├── styles.css        # 스타일 파일
+│   └── vite-env.d.ts     # Vite 환경 타입 정의
+├── .env.local            # 로컬 환경 변수 설정
+├── .gitignore            # Git에서 무시할 파일 목록
+├── CHANGELOG.md          # 변경 사항 기록
+├── index.html            # 메인 HTML 파일
+├── jest.config.ts        # Jest 설정 파일
+├── LICENSE               # 라이센스 정보
 ├── .eslintrc.js          # ESLint 설정
 ├── .prettierrc           # Prettier 설정
 ├── tailwind.config.js    # Tailwind CSS 설정
 ├── tsconfig.json         # TypeScript 설정
-├── vite.config.ts        # Vite 설정
+├── vite.config.mts        # Vite 설정
+├── package-lock.json     # 패키지 잠금 파일
 └── package.json          # 프로젝트 의존성 및 스크립트
 ```
