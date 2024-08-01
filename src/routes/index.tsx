@@ -8,7 +8,7 @@ import { Country, CountryList } from '@/pages/Country';
 import PrivateRoute from './PrivateRoute';
 import PublicRoute from './PublicRoute';
 import Movies from '@/pages/Movie/Movies';
-import Space from '@/pages/Space/Space';
+import Users from '@/pages/User/Users';
 import Ships from '@/pages/Space/Ships';
 
 const Router: React.FC = () => {
@@ -27,7 +27,7 @@ const Router: React.FC = () => {
               <Route path="/countries" element={<PrivateRoute><CountryList /></PrivateRoute>} />
               <Route path="/country" element={<PrivateRoute><Country /></PrivateRoute>} />
               <Route path="/movies" element={<PrivateRoute><Movies /></PrivateRoute>} />
-              <Route path="/space" element={<PrivateRoute><Space /></PrivateRoute>} />
+              <Route path="/users" element={<PrivateRoute><Users /></PrivateRoute>} />
               <Route path="/ships" element={<PrivateRoute><Ships /></PrivateRoute>} />
             </Routes>
           </div>

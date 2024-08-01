@@ -5,7 +5,7 @@ import { worker } from './mocks/browser'
 import './styles.css';
 
 async function prepare() {
-  if (process.env.NODE_ENV !== 'production') {
+  if (process.env.NODE_ENV === 'development') {
     return worker.start({
       onUnhandledRequest: 'bypass'
     })

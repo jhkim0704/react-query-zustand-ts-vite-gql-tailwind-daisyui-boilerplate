@@ -17,7 +17,7 @@ const SideMenu: React.FC<DrawerProps> = ({ isDrawerOpen, setIsDrawerOpen }) => {
 
   const menuItems = [
     { to: "/movies", text: "Movie List" },
-    { to: "/space", text: "User Insert" },
+    { to: "/users", text: "User Insert" },
     { to: "/ships", text: "Ship List" },
     { to: "/country", text: "Country" },
     { to: "/countries", text: "Country List" },
