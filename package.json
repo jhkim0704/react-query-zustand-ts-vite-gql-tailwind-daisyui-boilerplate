@@ -1,5 +1,5 @@
 {
-  "name": "react-redux-saga-ts-vite-boilerplate",
+  "name": "react-query-zustand-ts-vite-gql-tailwind-daisyui-msw-boilerplate",
   "version": "0.0.4",
   "scripts": {
     "start": "npm run build:css && concurrently \"npm run watch:css\" \"vite\"",
@@ -53,6 +53,7 @@
     "eslint-plugin-simple-import-sort": "^10.0.0",
     "jest": "^29.5.0",
     "lint-staged": "^13.2.2",
+    "msw": "^2.3.4",
     "prettier": "^2.8.8",
     "sass": "^1.62.0",
     "standard-version": "^9.5.0",
@@ -60,5 +61,10 @@
     "typescript": "^5.0.4",
     "vite": "^4.3.1",
     "vite-plugin-graphql-loader": "^3.0.1"
+  },
+  "msw": {
+    "workerDirectory": [
+      "public"
+    ]
   }
 }
